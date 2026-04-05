@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeTag.ai - YouTube Name Generator</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a0b2e">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2950/2950664.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Generate AI-powered YouTube Channel Names instantly.">
+</head>
+<body>
+
+    <div class="blob shape-1"></div>
+    <div class="blob shape-2"></div>
+    <div class="blob shape-3"></div>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header class="glass-header">
+            <h1 class="logo">VibeTag<span class="highlight">.ai</span></h1>
+            <p>Generate Viral YouTube Channel Names in Seconds</p>
+        </header>
+
+        <!-- INPUT SECTION -->
+        <main id="app-main">
+            <div class="glass-card input-card">
+                <h2>Define Your Vibe</h2>
+                
+                <form id="generator-form">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Content Niche</label>
+                            <select id="niche" required>
+                                <option value="gaming">Gaming</option>
+                                <option value="tech">Tech & Coding</option>
+                                <option value="vlog">Lifestyle Vlogs</option>
+                                <option value="edu">Education / Finance</option>
+                                <option value="beauty">Beauty & Fashion</option>
+                                <option value="comedy">Comedy & Entertainment</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Target Audience</label>
+                            <select id="audience">
+                                <option value="genz">Gen-Z (Fast-paced)</option>
+                                <option value="millennial">Millennials</option>
+                                <option value="pro">Professionals</option>
+                                <option value="all">General Audience</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Tone</label>
+                            <select id="tone">
+                                <option value="casual">Casual / Fun</option>
+                                <option value="hype">Energetic / Hype</option>
+                                <option value="pro">Clean / Professional</option>
+                                <option value="lux">Luxury / Premium</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Style Vibe</label>
+                            <select id="vibe">
+                                <option value="trendy">Trendy</option>
+                                <option value="clean">Clean</option>
+                                <option value="bold">Bold</option>
+                                <option value="minimal">Minimal</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Keywords (comma separated)</label>
+                            <input type="text" id="keywords" placeholder="e.g. Code, Future, Cyber">
+                        </div>
+
+                        <div class="input-group half-width">
+                            <label>Platform Focus</label>
+                            <select id="platform">
+                                <option value="shorts">YouTube Shorts</option>
+                                <option value="long">Long-form Video</option>
+                                <option value="live">Live Streaming</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group half-width">
+                            <label>Include Personal Name?</label>
+                            <input type="text" id="personalName" placeholder="Leave blank if none">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-generate" id="generate-btn">
+                        <span>Generate Ideas</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- RESULTS SECTION -->
+            <div id="results-section" class="hidden">
+                <hr class="glass-divider">
+                
+                <h2 class="section-title">Your Top Picks 🔥</h2>
+                <div class="top-picks-grid" id="top-picks">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="results-layout">
+                    <div class="left-col">
+                        <h3 class="section-title">More Name Ideas</h3>
+                        <div class="name-list" id="name-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <div class="glass-card brand-assets">
+                            <h3>Brand Assets</h3>
+                            <div id="taglines-box">
+                                <!-- Populated by JS -->
+                            </div>
+                            <h4 class="mt-4">AI Logo Prompt</h4>
+                            <div class="logo-prompt" id="logo-prompt">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('ServiceWorker registered!'))
+                .catch(err => console.log('ServiceWorker failed', err));
+            });
+        }
+    </script>
+</body>
+</html>

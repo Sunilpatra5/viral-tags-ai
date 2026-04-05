@@ -1,0 +1,17 @@
+{
+  "name": "VibeTag.ai Generator",
+  "short_name": "VibeTag",
+  "description": "YouTube Channel Name Generator App using AI Logic",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a0b2e",
+  "theme_color": "#1a0b2e",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2950/2950664.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
