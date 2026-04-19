@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
     border-color: var(--accent); box-shadow: 0 0 15px var(--accent-glow);
 }
 .input-group select option { background: #2f1b4a; color: #fff; }
+.input-group select optgroup { background: #1a0b2e; color: var(--accent); font-weight: 700; font-size: 0.95rem; padding: 6px 0; }
 
 /* Buttons */
 .btn-generate {
